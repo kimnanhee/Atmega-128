@@ -51,7 +51,7 @@ int main(void)
 			buff=buff<<1;
 			num++;
 		}
-		_delay_ms(200); // 0.25초 지연
+		_delay_ms(250); // 0.25초 지연
 		
 		if((PIND & 0x01)==0x00)
 		{
