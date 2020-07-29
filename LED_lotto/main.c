@@ -1,7 +1,7 @@
 /*
-8ê°œì˜ ledë¥¼ ë¹ ë¥´ê²Œ ìˆœì°¨ì ìœ¼ë¡œ ì ë“±ì‹œí‚¤ë‹¤ê°€
-ë²„íŠ¼ì´ ëˆŒë¦° ìˆœê°„ ì¼œì ¸ìˆëŠ” ledì˜ ë²ˆí˜¸ë¥¼ fndì— ì¶œë ¥í•œë‹¤.
-5ê°œì˜ ë²ˆí˜¸ë¥¼ ë‹¤ ë§ì¶”ë©´ ì„±ê³µ!!, ì•„ë‹ì‹œì—ëŠ” ë°˜ë³µí•œë‹¤.
+8°³ÀÇ led¸¦ ºü¸£°Ô ¼øÂ÷ÀûÀ¸·Î Á¡µî½ÃÅ°´Ù°¡
+¹öÆ°ÀÌ ´­¸° ¼ø°£ ÄÑÁ®ÀÖ´Â ledÀÇ ¹øÈ£¸¦ fnd¿¡ Ãâ·ÂÇÑ´Ù.
+5°³ÀÇ ¹øÈ£¸¦ ´Ù ¸ÂÃß¸é ¼º°ø!!, ¾Æ´Ò½Ã¿¡´Â ¹İº¹ÇÑ´Ù.
 */
 
 #define F_CPU 16000000UL
@@ -12,21 +12,21 @@
 
 #include "lcd.h"
 
-unsigned char seg[10] = // FND 0~9ë°ì´í„°
+unsigned char seg[10] = // FND 0~9µ¥ÀÌÅÍ
 {0xC0, 0xF9, 0xA4, 0xB0, 0x99,
 0x92, 0x82, 0xF8, 0x80, 0x90};
 
-int num; // ëœë¤ìœ¼ë¡œ ëˆŒë¦° LED ë²ˆí˜¸
-char print_data[16]; // LCDì— ì¶œë ¥í•  ë‚´ìš©
-int print_arr[5]={0, 0, 0, 0, 0}; // LED ë²ˆí˜¸ 5ê°œ ì €ì¥
+int num; // ·£´ıÀ¸·Î ´­¸° LED ¹øÈ£
+char print_data[16]; // LCD¿¡ Ãâ·ÂÇÒ ³»¿ë
+int print_arr[5]={0, 0, 0, 0, 0}; // LED ¹øÈ£ 5°³ ÀúÀå
 int i_num=0;
 
 int main(void)
 {
-	DDRA = 0xFF; // LCD ë°ì´í„° í•€
-    DDRC = 0xFF; // LCD ì œì–´ í•€
-	DDRE = 0xFF; // LED ì—°ê²° í•€
-	DDRB = 0xFF; // FND ì—°ê²° í•€
+	DDRA = 0xFF; // LCD µ¥ÀÌÅÍ ÇÉ
+    DDRC = 0xFF; // LCD Á¦¾î ÇÉ
+	DDRE = 0xFF; // LED ¿¬°á ÇÉ
+	DDRB = 0xFF; // FND ¿¬°á ÇÉ
 	
 	LCD_Init();
 	
@@ -42,7 +42,7 @@ int main(void)
 	
     while (1) 
     {
-		PORTE = buff; // LED ì¶œë ¥
+		PORTE = buff; // LED Ãâ·Â
 		if(buff==0x80) {
 			buff=0x01;
 			num=0;
@@ -51,13 +51,13 @@ int main(void)
 			buff=buff<<1;
 			num++;
 		}
-		_delay_ms(200); // 0.25ì´ˆ ì§€ì—°
+		_delay_ms(200); // 0.25ÃÊ Áö¿¬
 		
 		if((PIND & 0x01)==0x00)
 		{
-			PORTB = ~(seg[num]); // fndì— LED ë²ˆí˜¸ ì¶œë ¥
+			PORTB = ~(seg[num]); // fnd¿¡ LED ¹øÈ£ Ãâ·Â
 			
-			print_arr[i_num++]=num; // LED ë²ˆí˜¸ë¥¼ ì €ì¥í•  ë°°ì—´ì— numê°’ ì €ì¥
+			print_arr[i_num++]=num; // LED ¹øÈ£¸¦ ÀúÀåÇÒ ¹è¿­¿¡ num°ª ÀúÀå
 			
 			sprintf(print_data, " - %d %d %d %d %d - ", print_arr[0], print_arr[1], print_arr[2], print_arr[3], print_arr[4]);
 			LCD_setcursor(0, 0);
@@ -65,7 +65,7 @@ int main(void)
 			
 			if(i_num>4)
 			{
-				if(print_arr[0]==print_arr[1] && print_arr[1]==print_arr[2] && print_arr[2]==print_arr[3] && print_arr[3]==print_arr[4]) // 5ê°œë¥¼ ë‹¤ ë§ì·„ì„ ë•Œ
+				if(print_arr[0]==print_arr[1] && print_arr[1]==print_arr[2] && print_arr[2]==print_arr[3] && print_arr[3]==print_arr[4]) // 5°³¸¦ ´Ù ¸ÂÃèÀ» ¶§
 				{
 					LCD_setcursor(1, 0);
 					LCD_wString("success");
