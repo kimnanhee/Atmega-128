@@ -14,6 +14,8 @@ ATmega128
 MCU를 제거한 Arduino
 ```
 
+***꼭 Arduino의 MCU를 제거하고 통신을 해야한다.***
+
 
 
 Arduino의 RX, TX핀에 ATmega 어떤 핀에 연결하는지에 따라서 UART number를 다르게 설정해주어야 한다.
