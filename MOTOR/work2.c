@@ -3,6 +3,10 @@
  *
  * Created: 2020-09-16 오전 10:09:41
  *  Author: user
+ 사용자에게 받은 0~100 숫자 데이터로 모터 제어하기
+ 
+ 모터
+ B5, B6
  */ 
 #define F_CPU 16000000
 #define BAUDRATE(x) ((F_CPU/16/x)-1)
@@ -10,6 +14,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include <string.h>
 
 void uart_init(unsigned int baud)
 {
@@ -37,7 +42,7 @@ void uart_string(char* str)
 
 void DC_Motor(int value)
 {
-	OCR1A = value;
+	OCR1A = value; // B5 : PWM으로 모터 제어
 }
 
 int i=0, state=0, finish=0;
@@ -48,17 +53,18 @@ int main(void)
 	int speed=0;
 	int motor=0;
 	
-	DDRD = 0x00;
-	DDRE = 0xFF;
+	DDRD = 0x00; // 스위치 연결 핀
+	DDRE = 0xFF; // LED 연결 핀
 	PORTE = 0x01;
 	
-	DDRB = 0xFF;
+	DDRB = 0xFF; // 모터 연결핀
+	PORTB = 0;
+	
 	TCCR1A=0x82;
 	TCCR1B=0x1A;
-	OCR1A=0;
-	OCR1B=0;
+	OCR1A=0; // B5
+	OCR1B=0; // B6
 	ICR1=100;
-	PORTB = 0;
 	uart_init(BAUDRATE(9600));
 	sei();
 	while(1)

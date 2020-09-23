@@ -1,15 +1,15 @@
-/*
+ï»¿/*
  * work1.c
  *
- * Created: 2020-09-16 ¿ÀÀü 9:19:28
+ * Created: 2020-09-16 ì˜¤ì „ 9:19:28
  *  Author: user
  
- 3°³ÀÇ ½ºÀ§Ä¡·Î DC ¸ğÅÍ ÄÁÆ®·ÑÇÏ±â
+ 3ê°œì˜ ìŠ¤ìœ„ì¹˜ë¡œ DC ëª¨í„° ì»¨íŠ¸ë¡¤í•˜ê¸°
  1 - speed up     D0
  2 - speed down   D1
  3 - start/stop   D2
  
- ¸ğÅÍ
+ ëª¨í„°
  B5, B6
  */ 
 #define F_CPU 16000000
@@ -19,7 +19,7 @@
 
 void DC_Motor(int value)
 {
-	OCR1A = value; // B5 : PWMÀ¸·Î ¸ğÅÍ Á¦¾î
+	OCR1A = value; // B5 : PWMìœ¼ë¡œ ëª¨í„° ì œì–´
 }
 
 int main(void)
@@ -27,11 +27,11 @@ int main(void)
 	int speed=0;
 	int motor=0;
 	
-	DDRD = 0x00; // ½ºÀ§Ä¡ ¿¬°á ÇÉ
-	DDRE = 0xFF; // LED ¿¬°á ÇÉ
+	DDRD = 0x00; // ìŠ¤ìœ„ì¹˜ ì—°ê²° í•€
+	DDRE = 0xFF; // LED ì—°ê²° í•€
 	PORTE = 0x01;
 	
-	DDRB = 0xFF; // BÆ÷Æ®¿¡ ¸ğÅÍ¸¦ ¿¬°á
+	DDRB = 0xFF; // Bí¬íŠ¸ì— ëª¨í„°ë¥¼ ì—°ê²°
 	TCCR1A=0x82;
 	TCCR1B=0x1A;
 	OCR1A=0; // B5
@@ -41,7 +41,7 @@ int main(void)
 	while(1)
 	{
 		unsigned char key;
-		key = (PIND & 0x07); // ½ºÀ§Ä¡ °ª ÀĞ¾î¿À±â
+		key = (PIND & 0x07); // ìŠ¤ìœ„ì¹˜ ê°’ ì½ì–´ì˜¤ê¸°
 		switch(key)
 		{
 			case 0x03: // up
@@ -64,14 +64,13 @@ int main(void)
 		if(motor) // motor start
 		{
 			DC_Motor(speed);
-			PORTE = (0x01 << (speed/20+2)); // LED Ãâ·Â
+			PORTE = (0x01 << (speed/20+2)); // LED ì¶œë ¥
 		}
 		else // motor stop
 		{
 			DC_Motor(0);
-			PORTE=0x01 << 2; // LED Ãâ·Â
+			PORTE=0x01 << 2; // LED ì¶œë ¥
 		}
 		_delay_ms(10);
 	}
 }
-
