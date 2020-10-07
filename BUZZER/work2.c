@@ -38,8 +38,8 @@ char f_table[] = {17, 43, 66, 77, 97, 114, 129, 137, 255}; // 도레미파솔라
 
 int song[3][40] = { // 산토끼, 작은 별, 학교종 음계
 	{DO,FA,SOL,RA,SOL,FA,SOL,RA,FA,SOL,FA,RE,DO,REST, DO,FA,SOL,RA,SOL,FA,SOL,RA,FA,SOL,RE,MI,FA,EOS},
-	{DO,DO,SOL,SOL,RA,RA,SOL, FA,FA,MI,MI,RE,RE,DO},
-	{SOL,SOL,RA,RA,SOL,SOL,MI, SOL,SOL,MI,MI,RE}}; 
+	{DO,DO,SOL,SOL,RA,RA,SOL, FA,FA,MI,MI,RE,RE,DO,EOS},
+	{SOL,SOL,RA,RA,SOL,SOL,MI, SOL,SOL,MI,MI,RE,EOS}}; 
 		
 int time[3][40] = { // 산토끼, 작은 별, 학교종 박자
 	{N8,N8,N8,N8,N8,N8,N2,N4,N8,N8,N8,N8,N2,R, N8,N8,N8,N8,N8,N8,N2,N4,N8,N8,N8,N8,N2},
