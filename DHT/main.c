@@ -15,6 +15,7 @@ PD6 : DHT11 데이터
 #include <stdio.h>
 #include <stdlib.h>
 #include "lcd.h"
+#include "uart.h"
 #define DHT11_PIN 6
 
 uint8_t c=0, I_RH, D_RH, I_Temp, D_Temp, CheckSum;
@@ -54,7 +55,8 @@ int main(void)
 	DDRC = 0xFF; // LCD 제어 핀
 	
 	LCD_Init();
-	char buff[16];
+	uart_init(BAUDRATE(9600));
+	char buff[32] = {0,};
 	
     while (1) 
     {	
@@ -77,10 +79,12 @@ int main(void)
 			LCD_setcursor(0, 0);
 			sprintf(buff, "temp : %d.%d C   ", I_Temp, D_Temp); // 온도
 			LCD_wString(buff);
-			
 			LCD_setcursor(1, 0);
 			sprintf(buff, "humi : %d.%d %%  ", I_RH, D_RH); // 습도
 			LCD_wString(buff);
+			
+			sprintf(buff, "t%2d.%d h%2d.%d", I_Temp, D_Temp, I_RH, D_RH);
+			uart_string(buff);
 		}
 		_delay_ms(3000); // 2초 이상 쉬어야 센서에서 맞는 값을 읽어올 수 있다
     }
