@@ -13,8 +13,8 @@ int main(void)
 	DDRB = 0xFF; // timer
 	PORTB = 0x00;
 	
-	TCCR0=5; TCNT0=131; TIMSK=1; // timer 0 setting
-	TCCR1B=3; TCNT1=53036; TIMSK=4; // timer 1 setting 
+	TCCR0 = 5; TCNT0 = 131; TIMSK = 1; // timer 0 setting
+	TCCR1B = 3; TCNT1 = 53036; TIMSK |= 4; // timer 1 setting 
 	
 	sei(); // timer overflow enterrupt enble
 	
