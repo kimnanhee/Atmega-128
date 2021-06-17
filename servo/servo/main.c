@@ -1,7 +1,3 @@
-#include <avr/io.h>
-#include <util/delay.h>
-#include <avr/interrupt.h>
-#include <string.h>
 #include "uart.h"
 
 int motor_state = 0;
@@ -13,7 +9,7 @@ int main(void)
 	
 	uart0_init(BAUDRATE(9600));	// Bluetooth connection
 	
-    while (1) 
+    while (1)
     {
 		if(motor_state)
 		{

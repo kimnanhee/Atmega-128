@@ -3,31 +3,31 @@ servo.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000006  00800100  000001e0  00000274  2**0
+  0 .data         00000000  00800100  00800100  000001b6  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         000001e0  00000000  00000000  00000094  2**1
+  1 .text         00000142  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          0000000f  00800106  00800106  0000027a  2**0
+  2 .bss          00000002  00800100  00800100  000001b6  2**0
                   ALLOC
-  3 .comment      00000030  00000000  00000000  0000027a  2**0
+  3 .comment      00000030  00000000  00000000  000001b6  2**0
                   CONTENTS, READONLY
-  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000002ac  2**2
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001e8  2**2
                   CONTENTS, READONLY
-  5 .debug_aranges 00000030  00000000  00000000  000002e8  2**0
+  5 .debug_aranges 00000058  00000000  00000000  00000224  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_info   000009fe  00000000  00000000  00000318  2**0
+  6 .debug_info   00000a06  00000000  00000000  0000027c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_abbrev 000008a7  00000000  00000000  00000d16  2**0
+  7 .debug_abbrev 00000884  00000000  00000000  00000c82  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_line   00000388  00000000  00000000  000015bd  2**0
+  8 .debug_line   000003d2  00000000  00000000  00001506  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_frame  00000044  00000000  00000000  00001948  2**2
+  9 .debug_frame  000000c0  00000000  00000000  000018d8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_str    0000043a  00000000  00000000  0000198c  2**0
+ 10 .debug_str    0000046e  00000000  00000000  00001998  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000000ba  00000000  00000000  00001dc6  2**0
+ 11 .debug_loc    000001c6  00000000  00000000  00001e06  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_ranges 00000020  00000000  00000000  00001e80  2**0
+ 12 .debug_ranges 00000048  00000000  00000000  00001fcc  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -35,73 +35,73 @@ Disassembly of section .text:
 00000000 <__vectors>:
    0:	45 c0       	rjmp	.+138    	; 0x8c <__ctors_end>
    2:	00 00       	nop
-   4:	60 c0       	rjmp	.+192    	; 0xc6 <__bad_interrupt>
+   4:	53 c0       	rjmp	.+166    	; 0xac <__bad_interrupt>
    6:	00 00       	nop
-   8:	5e c0       	rjmp	.+188    	; 0xc6 <__bad_interrupt>
+   8:	51 c0       	rjmp	.+162    	; 0xac <__bad_interrupt>
    a:	00 00       	nop
-   c:	5c c0       	rjmp	.+184    	; 0xc6 <__bad_interrupt>
+   c:	4f c0       	rjmp	.+158    	; 0xac <__bad_interrupt>
    e:	00 00       	nop
-  10:	5a c0       	rjmp	.+180    	; 0xc6 <__bad_interrupt>
+  10:	4d c0       	rjmp	.+154    	; 0xac <__bad_interrupt>
   12:	00 00       	nop
-  14:	58 c0       	rjmp	.+176    	; 0xc6 <__bad_interrupt>
+  14:	4b c0       	rjmp	.+150    	; 0xac <__bad_interrupt>
   16:	00 00       	nop
-  18:	56 c0       	rjmp	.+172    	; 0xc6 <__bad_interrupt>
+  18:	49 c0       	rjmp	.+146    	; 0xac <__bad_interrupt>
   1a:	00 00       	nop
-  1c:	54 c0       	rjmp	.+168    	; 0xc6 <__bad_interrupt>
+  1c:	47 c0       	rjmp	.+142    	; 0xac <__bad_interrupt>
   1e:	00 00       	nop
-  20:	52 c0       	rjmp	.+164    	; 0xc6 <__bad_interrupt>
+  20:	45 c0       	rjmp	.+138    	; 0xac <__bad_interrupt>
   22:	00 00       	nop
-  24:	50 c0       	rjmp	.+160    	; 0xc6 <__bad_interrupt>
+  24:	43 c0       	rjmp	.+134    	; 0xac <__bad_interrupt>
   26:	00 00       	nop
-  28:	4e c0       	rjmp	.+156    	; 0xc6 <__bad_interrupt>
+  28:	41 c0       	rjmp	.+130    	; 0xac <__bad_interrupt>
   2a:	00 00       	nop
-  2c:	4c c0       	rjmp	.+152    	; 0xc6 <__bad_interrupt>
+  2c:	3f c0       	rjmp	.+126    	; 0xac <__bad_interrupt>
   2e:	00 00       	nop
-  30:	4a c0       	rjmp	.+148    	; 0xc6 <__bad_interrupt>
+  30:	3d c0       	rjmp	.+122    	; 0xac <__bad_interrupt>
   32:	00 00       	nop
-  34:	48 c0       	rjmp	.+144    	; 0xc6 <__bad_interrupt>
+  34:	3b c0       	rjmp	.+118    	; 0xac <__bad_interrupt>
   36:	00 00       	nop
-  38:	46 c0       	rjmp	.+140    	; 0xc6 <__bad_interrupt>
+  38:	39 c0       	rjmp	.+114    	; 0xac <__bad_interrupt>
   3a:	00 00       	nop
-  3c:	44 c0       	rjmp	.+136    	; 0xc6 <__bad_interrupt>
+  3c:	37 c0       	rjmp	.+110    	; 0xac <__bad_interrupt>
   3e:	00 00       	nop
-  40:	42 c0       	rjmp	.+132    	; 0xc6 <__bad_interrupt>
+  40:	35 c0       	rjmp	.+106    	; 0xac <__bad_interrupt>
   42:	00 00       	nop
-  44:	40 c0       	rjmp	.+128    	; 0xc6 <__bad_interrupt>
+  44:	33 c0       	rjmp	.+102    	; 0xac <__bad_interrupt>
   46:	00 00       	nop
-  48:	3e c0       	rjmp	.+124    	; 0xc6 <__bad_interrupt>
+  48:	5c c0       	rjmp	.+184    	; 0x102 <__vector_18>
   4a:	00 00       	nop
-  4c:	3c c0       	rjmp	.+120    	; 0xc6 <__bad_interrupt>
+  4c:	2f c0       	rjmp	.+94     	; 0xac <__bad_interrupt>
   4e:	00 00       	nop
-  50:	3a c0       	rjmp	.+116    	; 0xc6 <__bad_interrupt>
+  50:	2d c0       	rjmp	.+90     	; 0xac <__bad_interrupt>
   52:	00 00       	nop
-  54:	38 c0       	rjmp	.+112    	; 0xc6 <__bad_interrupt>
+  54:	2b c0       	rjmp	.+86     	; 0xac <__bad_interrupt>
   56:	00 00       	nop
-  58:	36 c0       	rjmp	.+108    	; 0xc6 <__bad_interrupt>
+  58:	29 c0       	rjmp	.+82     	; 0xac <__bad_interrupt>
   5a:	00 00       	nop
-  5c:	34 c0       	rjmp	.+104    	; 0xc6 <__bad_interrupt>
+  5c:	27 c0       	rjmp	.+78     	; 0xac <__bad_interrupt>
   5e:	00 00       	nop
-  60:	32 c0       	rjmp	.+100    	; 0xc6 <__bad_interrupt>
+  60:	25 c0       	rjmp	.+74     	; 0xac <__bad_interrupt>
   62:	00 00       	nop
-  64:	30 c0       	rjmp	.+96     	; 0xc6 <__bad_interrupt>
+  64:	23 c0       	rjmp	.+70     	; 0xac <__bad_interrupt>
   66:	00 00       	nop
-  68:	2e c0       	rjmp	.+92     	; 0xc6 <__bad_interrupt>
+  68:	21 c0       	rjmp	.+66     	; 0xac <__bad_interrupt>
   6a:	00 00       	nop
-  6c:	2c c0       	rjmp	.+88     	; 0xc6 <__bad_interrupt>
+  6c:	1f c0       	rjmp	.+62     	; 0xac <__bad_interrupt>
   6e:	00 00       	nop
-  70:	2a c0       	rjmp	.+84     	; 0xc6 <__bad_interrupt>
+  70:	1d c0       	rjmp	.+58     	; 0xac <__bad_interrupt>
   72:	00 00       	nop
-  74:	28 c0       	rjmp	.+80     	; 0xc6 <__bad_interrupt>
+  74:	1b c0       	rjmp	.+54     	; 0xac <__bad_interrupt>
   76:	00 00       	nop
-  78:	26 c0       	rjmp	.+76     	; 0xc6 <__bad_interrupt>
+  78:	19 c0       	rjmp	.+50     	; 0xac <__bad_interrupt>
   7a:	00 00       	nop
-  7c:	24 c0       	rjmp	.+72     	; 0xc6 <__bad_interrupt>
+  7c:	17 c0       	rjmp	.+46     	; 0xac <__bad_interrupt>
   7e:	00 00       	nop
-  80:	22 c0       	rjmp	.+68     	; 0xc6 <__bad_interrupt>
+  80:	15 c0       	rjmp	.+42     	; 0xac <__bad_interrupt>
   82:	00 00       	nop
-  84:	20 c0       	rjmp	.+64     	; 0xc6 <__bad_interrupt>
+  84:	13 c0       	rjmp	.+38     	; 0xac <__bad_interrupt>
   86:	00 00       	nop
-  88:	1e c0       	rjmp	.+60     	; 0xc6 <__bad_interrupt>
+  88:	11 c0       	rjmp	.+34     	; 0xac <__bad_interrupt>
 	...
 
 0000008c <__ctors_end>:
@@ -112,239 +112,142 @@ Disassembly of section .text:
   94:	de bf       	out	0x3e, r29	; 62
   96:	cd bf       	out	0x3d, r28	; 61
 
-00000098 <__do_copy_data>:
-  98:	11 e0       	ldi	r17, 0x01	; 1
+00000098 <__do_clear_bss>:
+  98:	21 e0       	ldi	r18, 0x01	; 1
   9a:	a0 e0       	ldi	r26, 0x00	; 0
   9c:	b1 e0       	ldi	r27, 0x01	; 1
-  9e:	e0 ee       	ldi	r30, 0xE0	; 224
-  a0:	f1 e0       	ldi	r31, 0x01	; 1
-  a2:	00 e0       	ldi	r16, 0x00	; 0
-  a4:	0b bf       	out	0x3b, r16	; 59
-  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
-  a8:	07 90       	elpm	r0, Z+
-  aa:	0d 92       	st	X+, r0
-  ac:	a6 30       	cpi	r26, 0x06	; 6
-  ae:	b1 07       	cpc	r27, r17
-  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+  9e:	01 c0       	rjmp	.+2      	; 0xa2 <.do_clear_bss_start>
 
-000000b2 <__do_clear_bss>:
-  b2:	21 e0       	ldi	r18, 0x01	; 1
-  b4:	a6 e0       	ldi	r26, 0x06	; 6
-  b6:	b1 e0       	ldi	r27, 0x01	; 1
-  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+000000a0 <.do_clear_bss_loop>:
+  a0:	1d 92       	st	X+, r1
 
-000000ba <.do_clear_bss_loop>:
-  ba:	1d 92       	st	X+, r1
+000000a2 <.do_clear_bss_start>:
+  a2:	a2 30       	cpi	r26, 0x02	; 2
+  a4:	b2 07       	cpc	r27, r18
+  a6:	e1 f7       	brne	.-8      	; 0xa0 <.do_clear_bss_loop>
+  a8:	09 d0       	rcall	.+18     	; 0xbc <main>
+  aa:	49 c0       	rjmp	.+146    	; 0x13e <_exit>
 
-000000bc <.do_clear_bss_start>:
-  bc:	a5 31       	cpi	r26, 0x15	; 21
-  be:	b2 07       	cpc	r27, r18
-  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
-  c2:	0a d0       	rcall	.+20     	; 0xd8 <main>
-  c4:	8b c0       	rjmp	.+278    	; 0x1dc <_exit>
+000000ac <__bad_interrupt>:
+  ac:	a9 cf       	rjmp	.-174    	; 0x0 <__vectors>
 
-000000c6 <__bad_interrupt>:
-  c6:	9c cf       	rjmp	.-200    	; 0x0 <__vectors>
+000000ae <uart0_init>:
 
-000000c8 <rx_char>:
-char data[10];
-int data_state = 0, motor_state = 0;
-
-char rx_char(void)
+void uart1_string(char* str)
 {
-	while((UCSR0A & 0x80) == 0);
-  c8:	5f 9b       	sbis	0x0b, 7	; 11
-  ca:	fe cf       	rjmp	.-4      	; 0xc8 <rx_char>
-	return UDR0;
-  cc:	8c b1       	in	r24, 0x0c	; 12
+	while (*str)
+	uart1_write(*str++);
 }
-  ce:	08 95       	ret
+  ae:	90 93 90 00 	sts	0x0090, r25	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
+  b2:	89 b9       	out	0x09, r24	; 9
+  b4:	88 e9       	ldi	r24, 0x98	; 152
+  b6:	8a b9       	out	0x0a, r24	; 10
+  b8:	78 94       	sei
+  ba:	08 95       	ret
 
-000000d0 <tx_char>:
-
-void tx_char(char tx_char)
-{
-	while((UCSR0A & 0x20)==0);
-  d0:	5d 9b       	sbis	0x0b, 5	; 11
-  d2:	fe cf       	rjmp	.-4      	; 0xd0 <tx_char>
-	UDR0 = tx_char; // 송신받을 값
-  d4:	8c b9       	out	0x0c, r24	; 12
-  d6:	08 95       	ret
-
-000000d8 <main>:
-}
+000000bc <main>:
+int motor_state = 0;
 
 int main(void)
 {	
 	int i;
 	DDRD = 0xFF; // motor data port
-  d8:	8f ef       	ldi	r24, 0xFF	; 255
-  da:	81 bb       	out	0x11, r24	; 17
+  bc:	8f ef       	ldi	r24, 0xFF	; 255
+  be:	81 bb       	out	0x11, r24	; 17
 	
-	char txt;
-	UCSR0A = 0x00;
-  dc:	1b b8       	out	0x0b, r1	; 11
-	UCSR0B = 0x98;
-  de:	88 e9       	ldi	r24, 0x98	; 152
-  e0:	8a b9       	out	0x0a, r24	; 10
-	UCSR0C = 0x06;
-  e2:	86 e0       	ldi	r24, 0x06	; 6
-  e4:	80 93 95 00 	sts	0x0095, r24	; 0x800095 <__TEXT_REGION_LENGTH__+0x7e0095>
-	UBRR0H = 0x00;
-  e8:	10 92 90 00 	sts	0x0090, r1	; 0x800090 <__TEXT_REGION_LENGTH__+0x7e0090>
-	UBRR0L = 103;
-  ec:	87 e6       	ldi	r24, 0x67	; 103
-  ee:	89 b9       	out	0x09, r24	; 9
-	DDRB=0xF0;
-  f0:	80 ef       	ldi	r24, 0xF0	; 240
-  f2:	87 bb       	out	0x17, r24	; 23
-	DDRE = 0x08;
-  f4:	88 e0       	ldi	r24, 0x08	; 8
-  f6:	82 b9       	out	0x02, r24	; 2
+	uart0_init(BAUDRATE(9600));	// Bluetooth connection
+  c0:	87 e6       	ldi	r24, 0x67	; 103
+  c2:	90 e0       	ldi	r25, 0x00	; 0
+  c4:	f4 df       	rcall	.-24     	; 0xae <uart0_init>
 	
-    while (1) 
+    while (1)
     {
-		txt = rx_char();
-  f8:	e7 df       	rcall	.-50     	; 0xc8 <rx_char>
-  fa:	c8 2f       	mov	r28, r24
-		if(txt == 0x02) data_state = 1;
-  fc:	82 30       	cpi	r24, 0x02	; 2
-  fe:	39 f4       	brne	.+14     	; 0x10e <main+0x36>
- 100:	81 e0       	ldi	r24, 0x01	; 1
- 102:	90 e0       	ldi	r25, 0x00	; 0
- 104:	90 93 09 01 	sts	0x0109, r25	; 0x800109 <data_state+0x1>
- 108:	80 93 08 01 	sts	0x0108, r24	; 0x800108 <data_state>
- 10c:	32 c0       	rjmp	.+100    	; 0x172 <main+0x9a>
-		else if(txt == 0x03)
- 10e:	83 30       	cpi	r24, 0x03	; 3
- 110:	29 f5       	brne	.+74     	; 0x15c <main+0x84>
-		{
-			if(strcmp(data, "11") == 0) motor_state = 1;
- 112:	60 e0       	ldi	r22, 0x00	; 0
- 114:	71 e0       	ldi	r23, 0x01	; 1
- 116:	8b e0       	ldi	r24, 0x0B	; 11
- 118:	91 e0       	ldi	r25, 0x01	; 1
- 11a:	57 d0       	rcall	.+174    	; 0x1ca <strcmp>
- 11c:	89 2b       	or	r24, r25
- 11e:	39 f4       	brne	.+14     	; 0x12e <main+0x56>
- 120:	81 e0       	ldi	r24, 0x01	; 1
- 122:	90 e0       	ldi	r25, 0x00	; 0
- 124:	90 93 07 01 	sts	0x0107, r25	; 0x800107 <__data_end+0x1>
- 128:	80 93 06 01 	sts	0x0106, r24	; 0x800106 <__data_end>
- 12c:	0b c0       	rjmp	.+22     	; 0x144 <main+0x6c>
-			else if(strcmp(data, "00") == 0) motor_state = 0;
- 12e:	63 e0       	ldi	r22, 0x03	; 3
- 130:	71 e0       	ldi	r23, 0x01	; 1
- 132:	8b e0       	ldi	r24, 0x0B	; 11
- 134:	91 e0       	ldi	r25, 0x01	; 1
- 136:	49 d0       	rcall	.+146    	; 0x1ca <strcmp>
- 138:	89 2b       	or	r24, r25
- 13a:	21 f4       	brne	.+8      	; 0x144 <main+0x6c>
- 13c:	10 92 07 01 	sts	0x0107, r1	; 0x800107 <__data_end+0x1>
- 140:	10 92 06 01 	sts	0x0106, r1	; 0x800106 <__data_end>
-			memset(data, 0, sizeof(data));
- 144:	8a e0       	ldi	r24, 0x0A	; 10
- 146:	eb e0       	ldi	r30, 0x0B	; 11
- 148:	f1 e0       	ldi	r31, 0x01	; 1
- 14a:	df 01       	movw	r26, r30
- 14c:	1d 92       	st	X+, r1
- 14e:	8a 95       	dec	r24
- 150:	e9 f7       	brne	.-6      	; 0x14c <main+0x74>
-			data_state = 0;
- 152:	10 92 09 01 	sts	0x0109, r1	; 0x800109 <data_state+0x1>
- 156:	10 92 08 01 	sts	0x0108, r1	; 0x800108 <data_state>
- 15a:	0b c0       	rjmp	.+22     	; 0x172 <main+0x9a>
-		}
-		else
-		{
-			if(data_state) strcat(data, txt);
- 15c:	80 91 08 01 	lds	r24, 0x0108	; 0x800108 <data_state>
- 160:	90 91 09 01 	lds	r25, 0x0109	; 0x800109 <data_state+0x1>
- 164:	89 2b       	or	r24, r25
- 166:	29 f0       	breq	.+10     	; 0x172 <main+0x9a>
- 168:	6c 2f       	mov	r22, r28
- 16a:	70 e0       	ldi	r23, 0x00	; 0
- 16c:	8b e0       	ldi	r24, 0x0B	; 11
- 16e:	91 e0       	ldi	r25, 0x01	; 1
-		}
-		tx_char(txt);
- 170:	21 d0       	rcall	.+66     	; 0x1b4 <strcat>
- 172:	8c 2f       	mov	r24, r28
- 174:	ad df       	rcall	.-166    	; 0xd0 <tx_char>
-		
 		if(motor_state)
- 176:	80 91 06 01 	lds	r24, 0x0106	; 0x800106 <__data_end>
- 17a:	90 91 07 01 	lds	r25, 0x0107	; 0x800107 <__data_end+0x1>
- 17e:	89 2b       	or	r24, r25
- 180:	09 f4       	brne	.+2      	; 0x184 <main+0xac>
- 182:	ba cf       	rjmp	.-140    	; 0xf8 <main+0x20>
- 184:	11 c0       	rjmp	.+34     	; 0x1a8 <main+0xd0>
+  c6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+  ca:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+  ce:	89 2b       	or	r24, r25
+  d0:	d1 f3       	breq	.-12     	; 0xc6 <main+0xa>
+  d2:	11 c0       	rjmp	.+34     	; 0xf6 <main+0x3a>
 		{
 			for(i=0; i<4; i++)
 			{
 				PORTD = (1 << i);
- 186:	21 e0       	ldi	r18, 0x01	; 1
- 188:	30 e0       	ldi	r19, 0x00	; 0
- 18a:	08 2e       	mov	r0, r24
- 18c:	02 c0       	rjmp	.+4      	; 0x192 <main+0xba>
- 18e:	22 0f       	add	r18, r18
- 190:	33 1f       	adc	r19, r19
- 192:	0a 94       	dec	r0
- 194:	e2 f7       	brpl	.-8      	; 0x18e <main+0xb6>
- 196:	22 bb       	out	0x12, r18	; 18
+  d4:	21 e0       	ldi	r18, 0x01	; 1
+  d6:	30 e0       	ldi	r19, 0x00	; 0
+  d8:	08 2e       	mov	r0, r24
+  da:	02 c0       	rjmp	.+4      	; 0xe0 <main+0x24>
+  dc:	22 0f       	add	r18, r18
+  de:	33 1f       	adc	r19, r19
+  e0:	0a 94       	dec	r0
+  e2:	e2 f7       	brpl	.-8      	; 0xdc <main+0x20>
+  e4:	22 bb       	out	0x12, r18	; 18
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 198:	ef e3       	ldi	r30, 0x3F	; 63
- 19a:	fc e9       	ldi	r31, 0x9C	; 156
- 19c:	31 97       	sbiw	r30, 0x01	; 1
- 19e:	f1 f7       	brne	.-4      	; 0x19c <main+0xc4>
- 1a0:	00 c0       	rjmp	.+0      	; 0x1a2 <main+0xca>
- 1a2:	00 00       	nop
-		}
-		tx_char(txt);
-		
+  e6:	ef e3       	ldi	r30, 0x3F	; 63
+  e8:	fc e9       	ldi	r31, 0x9C	; 156
+  ea:	31 97       	sbiw	r30, 0x01	; 1
+  ec:	f1 f7       	brne	.-4      	; 0xea <main+0x2e>
+  ee:	00 c0       	rjmp	.+0      	; 0xf0 <main+0x34>
+  f0:	00 00       	nop
+	
+    while (1)
+    {
 		if(motor_state)
 		{
 			for(i=0; i<4; i++)
- 1a4:	01 96       	adiw	r24, 0x01	; 1
- 1a6:	02 c0       	rjmp	.+4      	; 0x1ac <main+0xd4>
- 1a8:	80 e0       	ldi	r24, 0x00	; 0
- 1aa:	90 e0       	ldi	r25, 0x00	; 0
- 1ac:	84 30       	cpi	r24, 0x04	; 4
- 1ae:	91 05       	cpc	r25, r1
- 1b0:	54 f3       	brlt	.-44     	; 0x186 <main+0xae>
- 1b2:	a2 cf       	rjmp	.-188    	; 0xf8 <main+0x20>
+  f2:	01 96       	adiw	r24, 0x01	; 1
+  f4:	02 c0       	rjmp	.+4      	; 0xfa <main+0x3e>
+  f6:	80 e0       	ldi	r24, 0x00	; 0
+  f8:	90 e0       	ldi	r25, 0x00	; 0
+  fa:	84 30       	cpi	r24, 0x04	; 4
+  fc:	91 05       	cpc	r25, r1
+  fe:	54 f3       	brlt	.-44     	; 0xd4 <main+0x18>
+ 100:	e2 cf       	rjmp	.-60     	; 0xc6 <main+0xa>
 
-000001b4 <strcat>:
- 1b4:	fb 01       	movw	r30, r22
- 1b6:	dc 01       	movw	r26, r24
- 1b8:	0d 90       	ld	r0, X+
- 1ba:	00 20       	and	r0, r0
- 1bc:	e9 f7       	brne	.-6      	; 0x1b8 <strcat+0x4>
- 1be:	11 97       	sbiw	r26, 0x01	; 1
- 1c0:	01 90       	ld	r0, Z+
- 1c2:	0d 92       	st	X+, r0
- 1c4:	00 20       	and	r0, r0
- 1c6:	e1 f7       	brne	.-8      	; 0x1c0 <strcat+0xc>
- 1c8:	08 95       	ret
+00000102 <__vector_18>:
+		}
+    }
+}
 
-000001ca <strcmp>:
- 1ca:	fb 01       	movw	r30, r22
- 1cc:	dc 01       	movw	r26, r24
- 1ce:	8d 91       	ld	r24, X+
- 1d0:	01 90       	ld	r0, Z+
- 1d2:	80 19       	sub	r24, r0
- 1d4:	01 10       	cpse	r0, r1
- 1d6:	d9 f3       	breq	.-10     	; 0x1ce <strcmp+0x4>
- 1d8:	99 0b       	sbc	r25, r25
- 1da:	08 95       	ret
+ISR(USART0_RX_vect)
+{
+ 102:	1f 92       	push	r1
+ 104:	0f 92       	push	r0
+ 106:	0f b6       	in	r0, 0x3f	; 63
+ 108:	0f 92       	push	r0
+ 10a:	11 24       	eor	r1, r1
+ 10c:	8f 93       	push	r24
+ 10e:	9f 93       	push	r25
+	unsigned char buf = UDR0;
+ 110:	8c b1       	in	r24, 0x0c	; 12
+	
+	if(buf == '0') motor_state = 0;
+ 112:	80 33       	cpi	r24, 0x30	; 48
+ 114:	29 f4       	brne	.+10     	; 0x120 <__vector_18+0x1e>
+ 116:	10 92 01 01 	sts	0x0101, r1	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 11a:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 11e:	08 c0       	rjmp	.+16     	; 0x130 <__vector_18+0x2e>
+	else if(buf == '1') motor_state = 1;
+ 120:	81 33       	cpi	r24, 0x31	; 49
+ 122:	31 f4       	brne	.+12     	; 0x130 <__vector_18+0x2e>
+ 124:	81 e0       	ldi	r24, 0x01	; 1
+ 126:	90 e0       	ldi	r25, 0x00	; 0
+ 128:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 12c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 130:	9f 91       	pop	r25
+ 132:	8f 91       	pop	r24
+ 134:	0f 90       	pop	r0
+ 136:	0f be       	out	0x3f, r0	; 63
+ 138:	0f 90       	pop	r0
+ 13a:	1f 90       	pop	r1
+ 13c:	18 95       	reti
 
-000001dc <_exit>:
- 1dc:	f8 94       	cli
+0000013e <_exit>:
+ 13e:	f8 94       	cli
 
-000001de <__stop_program>:
- 1de:	ff cf       	rjmp	.-2      	; 0x1de <__stop_program>
+00000140 <__stop_program>:
+ 140:	ff cf       	rjmp	.-2      	; 0x140 <__stop_program>
